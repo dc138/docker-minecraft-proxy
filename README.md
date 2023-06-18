@@ -44,13 +44,13 @@ This way, when you restart the container, the installed proxy version can be det
 
 ## Configuration
 
-Configuration is handled through the docker environment.
+Configuration is handled through docker environment variables.
 Currently used arguments:
 - `PROXY_TYPE`: proxy flavour, use `bungeecord`, `waterfall` or `velocity`
 - `PROXY_VERSION`:
   - `latest`: for latest version
-  - `<version_number>`: for a specific version number
-- `PROXY_CUSTOM_URL`: a custom URL to download the proxy from. Ignores `PROXY_VERSION` if used.
+  - `<version_number>`: for a specific version number. This is not the minecraft version; different proxy software use different versioning schemes. Use `latest` unless you need a specific proxy version.
+- `PROXY_CUSTOM_URL`: a custom URL to download the proxy from.
 - `KEEP_ALIVE`: set to `true` to automatically reboot the proxy on a crash.
 
 
