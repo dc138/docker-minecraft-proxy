@@ -32,9 +32,15 @@ get_version_info() {
       ;;
 
     "waterfall")
-      url="none"
-      version="none"
-      ;;
+      if [ "$2" = "latest" ]; then
+        version=$(wget -q "https://api.papermc.io/v2/projects/waterfall/" -O- | jq -r ".versions | last")
+
+      elif $(echo $2 | grep -Eq "[0-9]+\.[0-9]+"); then
+        version=$2
+      fi
+
+      waterfall_version=$(wget -q "https://api.papermc.io/v2/projects/waterfall/versions/$version/" -O- | jq -r ".builds | last")
+      url="https://api.papermc.io/v2/projects/waterfall/versions/$version/builds/$waterfall_version/downloads/waterfall-$version-$waterfall_version.jar";;
 
     "velocity")
       if [ "$2" = "latest" ]; then
