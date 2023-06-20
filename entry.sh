@@ -95,8 +95,4 @@ fi
 cd /mc/proxy/
 echo $tag > tag.txt
 
-while true; do
-  java $JVM_FLAGS -jar proxy.jar
-
-  [ "$KEEP_ALIVE" = "true" ] || [ "$KEEP_ALIVE" = "TRUE" ] || break
-done
+java $JVM_FLAGS -jar proxy.jar

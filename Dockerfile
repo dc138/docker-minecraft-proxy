@@ -4,7 +4,6 @@ RUN apk add jq git
 VOLUME /mc/proxy
 WORKDIR /mc
 
-ENV KEEP_ALIVE="false"
 ENV PROXY_TYPE="vanilla"
 ENV PROXY_VERSION="latest"
 ENV PROXY_CUSTOM_URL=""
