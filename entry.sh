@@ -95,4 +95,6 @@ fi
 cd /mc/proxy/
 echo $tag > tag.txt
 
-java $JVM_FLAGS -jar proxy.jar
+chown -R $UID:$GID .
+
+exec setpriv --reuid $UID --regid $GID --clear-groups java $JVM_FLAGS -jar proxy.jar

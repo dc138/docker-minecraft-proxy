@@ -51,6 +51,8 @@ Currently used arguments:
   - `latest`: for latest version
   - `<version_number>`: for a specific version number. This is not the minecraft version; different proxy software use different versioning schemes. Use `latest` unless you need a specific proxy version.
 - `PROXY_CUSTOM_URL`: a custom URL to download the proxy from.
+- `JVM_FLAGS`: custom arguments to the JVM.
+- `UID` and `GID`: run the server with a custom user and group.
 
 
 # License
