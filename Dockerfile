@@ -5,7 +5,7 @@ RUN apk add jq git setpriv
 
 ENV JVM_FLAGS="-Xms512M -Xmx1024M"
 
-ENV PROXY_TYPE="vanilla"
+ENV PROXY_TYPE="velocity"
 ENV PROXY_VERSION="latest"
 ENV PROXY_CUSTOM_URL=""
 
