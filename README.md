@@ -13,12 +13,12 @@ Note that you might need to change the java version used by the container to run
 ### From source
 
 ```bash
-git clone git@github.com:DarthChungo/docker-minecraft-proxy.git
+git clone git@github.com:dc138/docker-minecraft-proxy.git
 cd docker-minecraft-proxy
 ```
 
 ```bash
-docker build -t darthchungo/docker-minecraft-proxy:latest .
+docker build -t dc138/minecraft-proxy:latest .
 ```
 
 ### From docker hub
@@ -26,16 +26,17 @@ docker build -t darthchungo/docker-minecraft-proxy:latest .
 Alternatively, you can download a prebuilt image from docker hub:
 
 ```bash
-docker pull darthchungo/docker-minecraft-proxy:latest
+docker pull dc138/minecraft-proxy:latest
 ```
 
+Note that you may also download an image with a specific java runtime version by using any of the following tags: `jre-21`, `jre-17`, published on docker hub.
 
 ## Running the image
 
 Now create a directory to store the proxy data, like `data/`, for example, and run the container:
 
 ```bash
-docker run -d -p 25565:25565 -v $(pwd)/data:/mc/proxy darthchungo/docker-minecraft-proxy:latest
+docker run -d -p 25565:25565 -v $(pwd)/data:/mc/proxy dc138/minecraft-proxy:latest
 ```
 
 The first time you run it, it will download the specified proxy jar automatically, and store its version and flavour inside a `tag.txt` file.
